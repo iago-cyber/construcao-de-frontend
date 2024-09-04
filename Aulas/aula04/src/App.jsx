@@ -1,10 +1,11 @@
-import Logo from './components/Logo'
+import Login from './pages/Login';
+
 function App() {
   return (
     <>
-      <Logo imagem = "logo1.png"/>
+      <Login/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
