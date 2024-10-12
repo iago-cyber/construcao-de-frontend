@@ -1,0 +1,16 @@
+{
+  "tarefas": [
+    {
+      "id": "1a",
+      "tarefa": "Estudar react"
+    },
+    {
+      "id": "2b",
+      "tarefa": "Fazer a pratica"
+    },
+    {
+      "id": "3c",
+      "tarefa": "pindaminha goiaba"
+    }
+  ]
+}

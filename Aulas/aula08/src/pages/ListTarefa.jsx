@@ -1,17 +1,22 @@
-import { useContext } from "react";
-import { TarefaContext } from "../context/TarefaContext"
+import { useContext, useEffect } from "react";
+import { TarefaContext } from "../context/TarefaContext";
 
 function ListTarefa() {
-    const { tarefas, remover } = useContext(TarefaContext);
-    return (
-        <ul>
-            {tarefas.map((item, index) => (
-                <li key={index}>
-                    {item} <button onClick={() => remover(item)}>Remover</button>
-                </li>
-            ))}
-        </ul>
-    )
+  const { tarefas, remover, carregar } = useContext(TarefaContext);
+
+  useEffect(() => {
+    carregar();
+  }, []);
+
+  return (
+    <ul>
+      {tarefas.map((item, index) => (
+        <li key={index}>
+          {item.tarefa} <button onClick={() => remover(item)}>Remover</button>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default ListTarefa;
