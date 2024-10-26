@@ -3,7 +3,7 @@ import InputTelefone from "../components/InputTelefone";
 import InputNome from "../components/InputNome";
 
 function Formulario(props) {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm({values: props.dados});
     return (
         <form onSubmit={handleSubmit(props.trataEnviar)}>
             <InputNome register={register} error={errors.nome} />
