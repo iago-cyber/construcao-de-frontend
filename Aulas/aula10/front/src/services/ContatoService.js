@@ -30,7 +30,18 @@ function criarContato(contato) {
 }*/
 }
 
-function atualizarContato(contato) { }
+function atualizarContato(contato) {
+  return axios.put(`${url}/${contato.id}`, {
+    nome: contato.nome,
+    telefone: contato.telefone,
+  })
+    .then(response => {
+      return { sucesso: true, dados: response.data };
+    })
+    .catch(error => {
+      return { sucesso: false, mensagem: error.message };
+    });
+}
 
 function removerContato(id) {
   return axios
@@ -39,19 +50,19 @@ function removerContato(id) {
       return { sucesso: true, dados: response.data };
     })
     .catch((error) => {
-      return { sucesso: false, mensagem: error.mensage };
+      return { sucesso: false, mensagem: error.message };
     });
 }
 
 function obterContato(id) {
   return axios
-  .get(`${url}/${id}`)
-  .then((response) => {
-    return { sucesso: true, dados: response.data };
-  })
-  .catch((error) => {
-    return { sucesso: false, mensagem: error.mensage };
-  });
+    .get(`${url}/${id}`)
+    .then((response) => {
+      return { sucesso: true, dados: response.data };
+    })
+    .catch((error) => {
+      return { sucesso: false, mensagem: error.message };
+    });
 }
 
-export { carregarContatos, criarContato, removerContato, obterContato}
+export { carregarContatos, criarContato, removerContato, obterContato, atualizarContato }
