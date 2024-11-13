@@ -1,3 +1,19 @@
 {
-    "users": []
+  "users": [
+    {
+      "email": "jose@iesb.br",
+      "password": "$2a$10$R7v7H3zsa6y1bKEFwxkPKedSR.rvs8kKRA8TxbjEBaZOK5owFdrAe",
+      "id": 1
+    },
+    {
+      "email": "maria@iesb.br",
+      "password": "$2a$10$pGfsKdz9Sd1Nso9MWPiOJORsnL6Mr840EqujQo6b/18IXU7vcY4fy",
+      "id": 2
+    },
+    {
+      "email": "iago@email.com",
+      "password": "$2a$10$XysYEWDa7N8zCV93uiV3FOuf2JHZO2eOpzys8UNbfaE79dss1NpHq",
+      "id": 3
+    }
+  ]
 }

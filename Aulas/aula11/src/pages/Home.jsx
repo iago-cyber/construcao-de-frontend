@@ -1,15 +1,18 @@
 import { useContext } from "react";
-import {AuthContext} from "../contexts/AuthContext";
+import { AuthContext } from "../contexts/AuthContext";
+import Menu from "../components/Menu";
 
-function Home(props) {
-  const {usuario, logout} = useContext(AuthContext);
+function Home() {
+  const { usuario, logout } = useContext(AuthContext)
+
   return (
     <>
+      <Menu />
       <h1>Home</h1>
       <p>Olá {usuario.email}!</p>
-      <button onClick={(e) => logout() }>Sair</button>
+
     </>
   );
 }
 
-export default Home; 
+export default Home;

@@ -1,15 +1,26 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
-import {Link} from "react-router-dom";
+import Formulario from "./Formulario";
 
-function Login(props) {
-  const { login, msg } = useContext(AuthContext);
-  
+function Login() {
+  const [msg, setMsg] = useState("");
+
+  const { login } = useContext(AuthContext);
+
+  const onEnviar = async (data) => {
+    setMsg("");
+    const erro = await login(data);
+    if (erro) {
+      setMsg(erro);
+    }
+  };
+
   return (
     <>
       <h1>Login</h1>
       {msg && <p>{msg}</p>}
-      <button onClick={(e) => { login({ email:"jose@iesb.br", senha:"abcd1234" }) }}>Entrar</button>
+      <Formulario onEnviar={onEnviar} valores={{email: null, senha: null}} />
       <Link to="/registrar">Registrar</Link>
     </>
   );
